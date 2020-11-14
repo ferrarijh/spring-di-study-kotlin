@@ -7,7 +7,7 @@ class InlineExamConsole constructor(private var exam: Exam?) : ExamConsole {
         System.out.printf("total: %d, average: %.3f", exam?.total(), exam?.average())
     }
 
-    override fun setExam(e: Exam?) {
-        exam = e
-    }
+//    override fun setExam(e: Exam?) {
+//        exam = e
+//    }
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- p:<name> -> setter -->
+    <bean id="mExam" class="jonathan.entity.MyExam" p:kor="10">
+
+        <!-- using setter -->
+<!--        <property name="kor" value="30"/>-->
+<!--        <property name="eng" value="40"/>-->
+<!--        <property name="math" value="50"/>-->
+<!--        <property name="com" value="60"/>-->
+
+        <!-- using constructor arguments -->
+<!--        <constructor-arg value="10"/>-->
+<!--        <constructor-arg value="10"/>-->
+<!--        <constructor-arg value="10"/>-->
+<!--        <constructor-arg value="10"/>-->
+    </bean>
+    <bean id="mConsole" class="jonathan.ui.GridExamConsole">
+        <!--
+            GridExamConsole has method named 'setExam'.
+            property name rule: setExam -> exam
+            -->
+        <!--
+            value vs ref? -> mExam is reference type!
+            -->
+        <property name="exam" ref="mExam"/>
+    </bean>
+
+    <bean id="exams" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <!-- 1) add element by id -->
+                <ref bean="mExam"/>
+                <!-- 2) add element by dynamic addition -->
+                <bean class="jonathan.entity.MyExam" p:eng="20"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

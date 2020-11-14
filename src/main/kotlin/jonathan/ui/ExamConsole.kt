@@ -4,5 +4,5 @@ import jonathan.entity.Exam
 
 interface ExamConsole {
     fun print()
-    fun setExam(e: Exam?)
+    //fun setExam(e: Exam?)
 }
