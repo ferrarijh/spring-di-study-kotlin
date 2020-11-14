@@ -29,3 +29,5 @@ class GridExamConsole(private var exam: Exam? = null): ExamConsole{
     //...
 }
 ```
+
+(test text)
