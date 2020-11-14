@@ -148,7 +148,7 @@ val console = context.getBean("console") as ExamConsole
 
 context.print()
 ```
-<i>to use `.getBean("console")`, the dependent class(`GridExamConsole` here) should be annotated with `@Component("console")`</i>
+<i>to use `.getBean("console")`, the dependent class(`GridExamConsole` here) should be annotated with `@Component("console")` as below:</i>
 ```kotlin
 @Component("console")
 class GridExamConsole : ExamConsole { ... }
